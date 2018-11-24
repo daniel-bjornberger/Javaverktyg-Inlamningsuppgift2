@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Objects;
 
 /**
  * Assignment 1 - Guessing Game
@@ -66,14 +67,22 @@ public class Guesser{
    * a valid reply. Return the String that you read from
    * the player.
    */
-  private String getReply(){
-    String reply = null;
-    // Write code here which reads a String from the console.
-    // As long as it is not a valid reply (one of "T" and "F")
-    // write an error message, and read a new reply.
-    // When you have gotten a valid reply, return it.
+
+  private String getReply() {
+
+    String reply = System.console().readLine();
+
+    while ( !Objects.equals(reply, "T") && !Objects.equals(reply, "F") ) {
+
+      System.out.println("Please answer T for true, and F for false.\n");
+      reply = System.console().readLine();
+
+    }
+
     return reply;
+
   }
+
 
   private void doGuesses(){
     int i=0; // number of guesses
