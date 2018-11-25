@@ -1,5 +1,5 @@
-import java.io.Console;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  * Assignment 1 - Guessing Game
@@ -70,18 +70,45 @@ public class Guesser{
 
   private String getReply() {
 
-    String reply = System.console().readLine();
+
+
+    if (System.console() == null) {
+      System.out.println("No System.console.");
+    }
+
+
+    Scanner sc = new Scanner(System.in);
+    String reply = null;
+
+    if (!sc.hasNextLine()) {
+      sc = new Scanner(System.in);
+    }
+    else {
+      reply = sc.nextLine();
+    }
+
+
 
     while ( !Objects.equals(reply, "T") && !Objects.equals(reply, "F") ) {
 
       System.out.println("Please answer T for true, and F for false.\n");
-      reply = System.console().readLine();
+
+      if (!sc.hasNext()) {
+        sc = new Scanner(System.in);
+      }
+      else {
+        reply = sc.nextLine();
+        System.out.println("Hej!");
+      }
 
     }
 
     return reply;
 
   }
+
+
+
 
 
   private void doGuesses(){
