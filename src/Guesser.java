@@ -81,10 +81,6 @@ public class Guesser{
 
       System.out.println("Please answer T for true, and F for false.\n");
 
-      // Change in order to test reset and revert.
-        
-      System.out.println("Unnecessary printout!");
-
       reply = sc.nextLine();
 
     }
