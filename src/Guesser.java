@@ -49,6 +49,7 @@ public class Guesser{
     doGuesses();
   }
 
+
   private void rules(){
     System.out.println("Think of a number between " +
                        low + " and "  + high);
@@ -56,6 +57,7 @@ public class Guesser{
                        "to guess the number.");
     System.out.println("Please answer T for true, and F for false.\n");
   }
+
 
   /*
    * Task 3. Complete the code for the getReply() method.
@@ -68,47 +70,23 @@ public class Guesser{
    * the player.
    */
 
+
   private String getReply() {
 
-
-
-    if (System.console() == null) {
-      System.out.println("No System.console.");
-    }
-
-
     Scanner sc = new Scanner(System.in);
-    String reply = null;
 
-    if (!sc.hasNextLine()) {
-      sc = new Scanner(System.in);
-    }
-    else {
-      reply = sc.nextLine();
-    }
-
-
+    String reply = sc.nextLine();
 
     while ( !Objects.equals(reply, "T") && !Objects.equals(reply, "F") ) {
 
       System.out.println("Please answer T for true, and F for false.\n");
 
-      if (!sc.hasNext()) {
-        sc = new Scanner(System.in);
-      }
-      else {
-        reply = sc.nextLine();
-        System.out.println("Hej!");
-      }
+      reply = sc.nextLine();
 
     }
-
+    
     return reply;
-
   }
-
-
-
 
 
   private void doGuesses(){
@@ -137,6 +115,7 @@ public class Guesser{
     // and we have found the number
     answer(low, i);
   }
+
 
   private void answer(int guess, int numberOfGuesses){
     System.out.println("You were thinking about " +
