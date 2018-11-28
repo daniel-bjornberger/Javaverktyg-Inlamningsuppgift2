@@ -3,6 +3,8 @@ public class TestGuesser {
     public static void main(String[] args) {
 
 
+        // Below are four tests of the constructor in the class Guesser.
+
         System.out.println("Test of Guesser with arguments: low = 0, high = 1000");
 
         Guesser guesser1 = new Guesser(0, 1000);
@@ -38,6 +40,29 @@ public class TestGuesser {
         catch (Exception e) {
             System.out.println("Success, an exception was thrown, with the message: " + e.getMessage() + "\n");
         }
+
+        //-------------------------------------------------------------------------------------------------------
+
+        // Test of String comparison with equals, where one of the strings is null. This shall result in NullPointerException.
+        // This code segment was copied from the assignment text, from the chapter "Stuff to think about (for Task 3)".
+
+
+        String s = null;
+
+        if(s.equals("Barcelona")){
+            System.out.println("Ay, caramba");
+        }
+
+
+       /*
+
+       This works as intended, I get the message:
+
+        Exception in thread "main" java.lang.NullPointerException
+        at TestGuesser.main(TestGuesser.java:52)
+
+        */
+
 
     }
 
