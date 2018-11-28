@@ -4,6 +4,10 @@ public class GuessingGame {
 
         try {
 
+            if (args.length != 2) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+
             int args0 = Integer.parseInt(args[0]);
             int args1 = Integer.parseInt(args[1]);
 
@@ -13,7 +17,7 @@ public class GuessingGame {
         }
         catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
 
-            System.err.println("Invalid arguments, or too few arguments. The arguments shall be two integers. The program will now terminate.");
+            System.err.println("Invalid arguments, or incorrect number of arguments. The arguments shall be two integers. The program will now terminate.");
 
         }
         catch (IllegalArgumentException e) {
